@@ -1,6 +1,6 @@
 # Scenic.Sensor
 
-`Scenic.Sensor` is a GenServer that is a combination PubSub server and data cache for sensors. It is intended to be the interface between sensors and Scenic scenes, although it has no dependencies on Scenic and can be used in other applications.
+`Scenic.Sensor` is a combination pub/sub server and data cache for sensors. It is intended to be the interface between sensors and Scenic scenes, although it has no dependencies on Scenic and can be used in other applications.
 
 ## Installation
 
@@ -13,6 +13,21 @@ def deps do
   ]
 end
 ```
+
+## Startup
+
+In order to use `Scenic.Sensor`, you must first add it to your supervision tree. It should be ordered in the tree so that it has a chance to initialize before other processes start making calls to it.
+
+      def start(_type, _args) do
+        import Supervisor.Spec, warn: false
+
+        opts = [strategy: :one_for_one, name: ScenicExample]
+        children = [
+          {Scenic.Sensor, nil}
+        ]
+        Supervisor.start_link(children, strategy: :one_for_one)
+      end
+
 
 ## Why Scenic.Sensor
 
