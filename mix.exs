@@ -9,7 +9,14 @@ defmodule ScenicSensor.MixProject do
       version: @version,
       elixir: "~> 1.7",
       start_permanent: Mix.env() == :prod,
-      deps: deps()
+      deps: deps(),
+      docs: [
+        main: "Scenic.Sensor",
+        # source_ref: "v#{@version}",
+        # source_url:≈ "https://github.com/boydm/scenic",
+        # homepage_url: "http://kry10.com",
+      ],
+
     ]
   end
 
@@ -25,7 +32,7 @@ defmodule ScenicSensor.MixProject do
     [
       # Docs dependencies
       {:ex_doc, ">= 0.0.0", only: [:dev, :docs]},
-      {:inch_ex, ">= 0.0.0", only: :docs},
+      {:dialyxir, "~> 0.5", only: :dev, runtime: false}
     ]
   end
 end

@@ -23,7 +23,8 @@ In order to use `Scenic.Sensor`, you must first add it to your supervision tree.
 
         opts = [strategy: :one_for_one, name: ScenicExample]
         children = [
-          {Scenic.Sensor, nil}
+          {Scenic.Sensor, nil},
+          ...
         ]
         Supervisor.start_link(children, strategy: :one_for_one)
       end
@@ -49,6 +50,8 @@ The `version` and `description` paramters are bitstrings that describe this sens
 Sensors can also unregister if they are no longer available.
 
       Scenic.Sensor.unregister( :sensor_id )
+
+Simply exiting the sensor does also cleans up its registration.
 
 
 ## Publishing Data
