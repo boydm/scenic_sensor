@@ -11,7 +11,7 @@ defmodule ScenicSensor.MixProject do
       start_permanent: Mix.env() == :prod,
       deps: deps(),
       docs: [
-        main: "Scenic.Sensor",
+        main: "Scenic.Sensor"
         # source_ref: "v#{@version}",
         # source_url:≈ "https://github.com/boydm/scenic",
         # homepage_url: "http://kry10.com",
