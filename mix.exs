@@ -16,7 +16,7 @@ defmodule ScenicSensor.MixProject do
         # source_url:≈ "https://github.com/boydm/scenic",
         # homepage_url: "http://kry10.com",
       ],
-
+      description: description()
     ]
   end
 
@@ -34,5 +34,11 @@ defmodule ScenicSensor.MixProject do
       {:ex_doc, ">= 0.0.0", only: [:dev, :docs]},
       {:dialyxir, "~> 0.5", only: :dev, runtime: false}
     ]
+  end
+
+  defp description() do
+    """
+    Scenic.Sensor - Sensor Pub/Sub Cache
+    """
   end
 end
