@@ -2,6 +2,7 @@ defmodule ScenicSensor.MixProject do
   use Mix.Project
 
   @version "0.7.0"
+  @github "https://github.com/boydm/scenic_sensor"
 
   def project do
     [
@@ -16,8 +17,14 @@ defmodule ScenicSensor.MixProject do
         # source_url:≈ "https://github.com/boydm/scenic",
         # homepage_url: "http://kry10.com",
       ],
-      description: description()
-    ]
+      description: description(),
+      package: [
+        contributors: ["Boyd Multerer"],
+        maintainers: ["Boyd Multerer"],
+        licenses: ["APACHE 2"],
+        links: %{github: @github}
+      ]      
+    ],
   end
 
   # Run "mix help compile.app" to learn about applications.
