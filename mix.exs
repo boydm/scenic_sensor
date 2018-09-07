@@ -24,7 +24,7 @@ defmodule ScenicSensor.MixProject do
         licenses: ["APACHE 2"],
         links: %{github: @github}
       ]      
-    ],
+    ]
   end
 
   # Run "mix help compile.app" to learn about applications.
