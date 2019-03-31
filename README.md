@@ -73,7 +73,7 @@ Scenes (or any other process) can subscribe to a sensor. They will receive messa
 
 The `:sensor_id` parameter is the atom registered for the sensor.
 
-The subscribing process with then start receiving messages that can be handled with `handle_info/2`
+The subscribing process will then start receiving messages that can be handled with `handle_info/2`
 
 event | message
 --- | ---
