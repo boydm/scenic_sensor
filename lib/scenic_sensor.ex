@@ -244,7 +244,7 @@ defmodule Scenic.Sensor do
 
   ## Return Value
 
-  On success, returns `:ok`
+  On success, returns `{:ok, sensor_id}`
 
   If `sensor_id` is already registered to another process, it returns
 
@@ -254,7 +254,7 @@ defmodule Scenic.Sensor do
           sensor_id :: atom,
           version :: String.t(),
           description :: String.t()
-        ) :: :ok
+        ) :: {:ok, atom} | {:error, :already_registered}
   def register(sensor_id, version, description)
       when is_atom(sensor_id) and is_bitstring(version) and is_bitstring(description) do
     GenServer.call(
